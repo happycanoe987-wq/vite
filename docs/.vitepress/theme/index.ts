@@ -3,6 +3,7 @@ import Theme from '@voidzero-dev/vitepress-theme/src/vite'
 import '@shikijs/vitepress-twoslash/style.css'
 import 'virtual:group-icons.css'
 import 'vitepress-plugin-graphviz/style.css'
+import { inject } from '@vercel/analytics'
 import { h } from 'vue'
 import './styles.css'
 
@@ -29,5 +30,8 @@ export default {
     app.use(TwoslashFloatingVue)
 
     Theme.enhanceApp(ctx)
+    
+    // Initialize Vercel Web Analytics
+    inject()
   },
 }
